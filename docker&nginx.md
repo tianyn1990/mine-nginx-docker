@@ -1,4 +1,10 @@
-# docker环境运行nginx测试代码
+# docker容器中运行nginx测试代码
+
+## 参考
+
+涉及到的docker文章，见[这里](./docker-doc.md)
+
+另附收集的一点nginx文章，见[这里](./nginx-doc.md)
 
 ## 安装&配置docker
 

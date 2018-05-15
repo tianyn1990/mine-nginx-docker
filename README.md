@@ -34,4 +34,8 @@ https://bbbb.com/push/index.html
 http://localhost:8080/
 ```
 
-另外，安装和配置docker，见[这里](./docker&nginx.md)
+**安装和配置docker，在docker容器中运行nginx测试代码，见[这里](./docker&nginx.md)**
+
+涉及到的docker文章，见[这里](./docker-doc.md)
+
+另附收集的一点nginx文章，见[这里](./nginx-doc.md)
