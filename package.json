@@ -1,0 +1,17 @@
+{
+  "name": "mine-nginx-docker",
+  "version": "1.0.0",
+  "description": "docker x nginx for tests",
+  "scripts": {
+    "build": "docker image build -t tianyn1990/mine-nginx-docker:latest . -f ./docker/Dockerfile",
+    "run": "docker container run -it -p 127.0.0.1:8080:80 -p 127.0.0.1:443:443 --rm --name mynginx tianyn1990/mine-nginx-docker /bin/bash",
+    "stop": "docker container stop mynginx",
+    "kill": "docker container kill mynginx",
+    "publish": "docker image push tianyn1990/mine-nginx-docker:latest"
+  },
+  "keywords": ["Docker", "Nginx"],
+  "author": "tianyn1990",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
