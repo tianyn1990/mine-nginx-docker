@@ -33,7 +33,7 @@
 
 ### proxy_pass & upstream
 
-见：xx
+见：conf.d/default.conf:proxy_pass部分、conf.d/upstream.conf
 
 ### 测试环境的nginx
 
@@ -60,4 +60,15 @@ HostName  g.hz.netease.com
 IdentityFile ~/.ssh/gitlab_rsa
 Port  22222
 
+```
+
+### 如何查日志文件
+
+```bash
+# tail命令
+> tail -n 10 **file** # 显示文件file的最后10行
+> tail +20 **file** # 显示文件file的内容，从第20行至文件末尾
+> tail -c 10 **file** # 显示文件file的最后10个字符
+> tail -f **file** # 监视文件变化
+> tail -n 10 **file** | grep xxx  # 从尾部开始查找，显示10行跟xxx有关的内容
 ```
