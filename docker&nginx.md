@@ -36,11 +36,22 @@
 
 ```bash
 > docker container run -it --rm --name mynginx \
+  -p 127.0.0.1:8080:80 \
   tianyn1990/nginx \
   /bin/bash
 ```
 
-本地创建一个测试用目录
+启动nginx
+
+```bash
+> nginx
+```
+
+先测试一下（本地8080端口映射到了docker容器的80端口），访问：
+
+[http://localhost:8080/](http://localhost:8080/)
+
+然后，本地创建一个测试用目录，将docker容器中的nginx配置和资源，导出到本地
 
 ```bash
 > cd ~/Documents
@@ -66,7 +77,10 @@
 启动容器
 
 ```bash
+> cd ~/Documents/mine-nginx
 > docker container run -it --rm --name mynginx \
+  -p 127.0.0.1:8080:80 \
+  -p 127.0.0.1:443:443 \
   -v "$PWD/conf":/etc/nginx \
   -v "$PWD/html":/usr/share/nginx/html \
   tianyn1990/nginx \
@@ -79,7 +93,28 @@
 > nginx
 ```
 
-现在，你可以自由修改本地的nginx配置和资源文件，然后执行nginx reload命令即可。
+### 访问测试url
+
+配置host
+
+```host
+127.0.0.1 aaaa.com
+127.0.0.1 www.aaaa.com
+127.0.0.1 bbbb.com
+127.0.0.1 www.bbbb.com
+127.0.0.1 cccc.com
+127.0.0.1 www.cccc.com
+```
+
+访问一下链接测试
+
+[https://cccc.com/pages/index.html](https://cccc.com/pages/index.html)
+
+[https://bbbb.com/push/index.html](https://bbbb.com/push/index.html)
+
+[http://localhost:8080/](http://localhost:8080/)
+
+**现在，你可以修改本地的nginx配置和资源文件，然后在docker容器内执行reload命令即可测试nginx。**
 
 常用的nginx命令有
 
@@ -100,28 +135,9 @@
 > exit
 ```
 
-### 访问测试url
-
-配置host
-
-```host
-127.0.0.1 aaaa.com
-127.0.0.1 www.aaaa.com
-127.0.0.1 bbbb.com
-127.0.0.1 www.bbbb.com
-127.0.0.1 cccc.com
-127.0.0.1 www.cccc.com
-```
-
-访问
-
-[https://cccc.com/pages/index.html](https://cccc.com/pages/index.html)
-
-[https://bbbb.com/push/index.html](https://bbbb.com/push/index.html)
-
-[http://localhost:8080/](http://localhost:8080/)
-
 ## 本地安装nginx
+
+> forMac
 
 ```bash
 > brew -v

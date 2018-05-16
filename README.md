@@ -39,3 +39,5 @@ docker x nginx for tests
 涉及到的docker文章，见[这里](./docker-doc.md)
 
 另附收集的一点nginx文章，见[这里](./nginx-doc.md)
+
+nginx分享大纲，见[这里](./nginx-share.md)
