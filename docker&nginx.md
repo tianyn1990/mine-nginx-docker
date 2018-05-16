@@ -36,7 +36,7 @@
 
 ```bash
 > docker container run -it --rm --name mynginx \
-  tianyn1990/nginx
+  tianyn1990/nginx \
   /bin/bash
 ```
 
